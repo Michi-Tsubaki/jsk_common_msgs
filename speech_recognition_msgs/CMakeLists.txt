@@ -1,28 +1,17 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.8)
 project(speech_recognition_msgs)
 
-find_package(catkin REQUIRED COMPONENTS
-  message_generation
-  std_msgs
+find_package(ament_cmake REQUIRED)
+find_package(rosidl_default_generators REQUIRED)
+
+rosidl_generate_interfaces(${PROJECT_NAME}
+  "msg/Grammar.msg"
+  "msg/PhraseRule.msg"
+  "msg/SpeechRecognitionCandidates.msg"
+  "msg/Vocabulary.msg"
+  "srv/SpeechRecognition.srv"
 )
 
-add_message_files(
-  FILES
-  Grammar.msg
-  PhraseRule.msg
-  SpeechRecognitionCandidates.msg
-  Vocabulary.msg
-)
+ament_export_dependencies(rosidl_default_runtime)
 
-add_service_files(
-  FILES
-  SpeechRecognition.srv
-)
-
-generate_messages(
-  DEPENDENCIES std_msgs
-)
-
-catkin_package(
-    CATKIN_DEPENDS std_msgs message_runtime
-)
+ament_package()
