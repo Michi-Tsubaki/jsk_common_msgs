@@ -1,6 +1,15 @@
-# jsk_common_msgs
+# jsk_common_msgs (ROS2)
 
-[![Build Status](https://app.travis-ci.com/jsk-ros-pkg/jsk_common_msgs.svg?branch=master)](https://app.travis-ci.com/jsk-ros-pkg/jsk_common_msgs)
+[![ROS 2 Jazzy CI](https://github.com/jsk-ros-pkg/jsk_common_msgs/actions/workflows/ros2_jazzy.yml/badge.svg?branch=ros2)](https://github.com/jsk-ros-pkg/jsk_common_msgs/actions/workflows/ros2_jazzy.yml?query=branch%3Aros2)
+
+## speech_recognition_msgs
+
+Build the ported interface package with
+
+```bash
+source /opt/ros/${ROS_DISTRO}/setup.bash
+colcon build --packages-up-to speech_recognition_msgs --symlink-install
+```
 
 
 [//]: # (!!DO NOT EDIT !!)
